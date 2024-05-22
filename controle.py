@@ -7,7 +7,7 @@ banco = mysql.connector.connect(
     database = "cadastro_produtos"
 )
 
-def funcao_principal():
+def tela_cadastro():
     codigo_produto = formulario_cadastro.lineEdit.text()
     print("Código : ",codigo_produto)
     descricao_produto = formulario_cadastro.lineEdit_2.text()
@@ -36,15 +36,20 @@ def funcao_principal():
     dados = (str(codigo_produto),str(descricao_produto),str(codigo_barras),str(preco_produto),str(codigo_ncm),categoria)
     cursor.execute(comando_SQL,dados)
     banco.commit()
+    formulario_cadastro.lineEdit.setText("")
+    formulario_cadastro.lineEdit_2.setText("")
+    formulario_cadastro.lineEdit_3.setText("")
+    formulario_cadastro.lineEdit_4.setText("")
+    formulario_cadastro.lineEdit_5.setText("")
+    formulario_cadastro.radioButton.setCheckable(False)
     
 
 
 
-
 app=QtWidgets.QApplication([])
-formulario_cadastro=uic.loadUi("formulario_cadastro.ui")
-formulario_cadastro.pushButton.clicked.connect(funcao_principal)
-
+formulario_cadastro = uic.loadUi("formulario_cadastro.ui")
+tela_login = uic.loadUi("tela_login.ui")
+formulario_cadastro.pushButton.clicked.connect(tela_cadastro)
 formulario_cadastro.show()
 app.exec()
 
