@@ -20,5 +20,5 @@ use cadastro_produtos;
 show tables;
 --visualisar estrutura da tabela
 describe produtos;
---
+--selecionar toda a tabela produtos
 select * from produtos;

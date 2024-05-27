@@ -7,6 +7,10 @@ banco = mysql.connector.connect(
     database = "cadastro_produtos"
 )
 
+def tela_login():
+        formulario_cadastro.show()
+
+
 def tela_cadastro():
     codigo_produto = formulario_cadastro.lineEdit.text()
     print("Código : ",codigo_produto)
@@ -42,15 +46,34 @@ def tela_cadastro():
     formulario_cadastro.lineEdit_4.setText("")
     formulario_cadastro.lineEdit_5.setText("")
     formulario_cadastro.radioButton.setCheckable(False)
-    
+
+def tela_lista():
+    lista_produtos.show()
+
+    cursor = banco.cursor()
+    comando_SQL = "SELECT * FROM produtos"
+    cursor.execute(comando_SQL)
+    dados_lidos = cursor.fetchall()
+    lista_produtos.tableWidget.setRowCount(len(dados_lidos))
+    lista_produtos.tableWidget.setColumnCount(7)
+
+    for i in range(0,len(dados_lidos)):
+        for j in range(0,7):
+            lista_produtos.tableWidget.setItem(i,j,QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
+
+
+  
 
 
 
 app=QtWidgets.QApplication([])
 formulario_cadastro = uic.loadUi("formulario_cadastro.ui")
-tela_login = uic.loadUi("tela_login.ui")
+login = uic.loadUi("tela_login.ui")
+lista_produtos = uic.loadUi("listar_dados.ui")
+login.pushButton.clicked.connect(tela_login)
 formulario_cadastro.pushButton.clicked.connect(tela_cadastro)
-formulario_cadastro.show()
+formulario_cadastro.pushButton_3.clicked.connect(tela_lista)
+login.show()
 app.exec()
 
 
