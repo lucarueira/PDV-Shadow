@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>745</width>
-    <height>677</height>
+    <height>652</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -306,8 +306,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>34</x>
-      <y>582</y>
+      <x>40</x>
+      <y>580</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -340,8 +340,8 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>124</x>
-      <y>582</y>
+      <x>220</x>
+      <y>580</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -357,7 +357,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>610</y>
+      <y>620</y>
       <width>661</width>
       <height>16</height>
      </rect>
@@ -370,13 +370,42 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>570</y>
+      <y>560</y>
       <width>661</width>
       <height>16</height>
      </rect>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_5">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>661</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>580</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(243, 243, 243);</string>
+    </property>
+    <property name="text">
+     <string>Menu</string>
     </property>
    </widget>
   </widget>
